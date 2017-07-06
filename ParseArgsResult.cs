@@ -2,8 +2,8 @@
 {
     public abstract class ParseArgsResult
     {
-        public string[] Arguments { get; protected set; }
-        public ActionTypes ActionType { get; protected set; }
+        public string[] Arguments { get; set; }
+        public ActionTypes ActionType { get; set; }
         public abstract void Execute();
     }
 }

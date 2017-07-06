@@ -5,6 +5,5 @@
         Quit = -1,
         RunCommand = 0,
         KillProcess = 1
-
     }
 }

@@ -20,6 +20,11 @@ namespace g
                     Console.WriteLine("Run Command");
                     command.Execute();
                     return;
+                default:
+                    Console.WriteLine("Execute: " + command.GetType().Name);
+                    command.Execute();
+                    return;
+                
             }
         }
 
@@ -43,19 +48,6 @@ namespace g
                 }
             }
             return new DoNothingResult(args, ActionTypes.Quit);
-        }
-    }
-
-    public class KillItResult : ParseArgsResult
-    {
-        public KillItResult(string[] args)
-        {
-            this.Arguments = args;
-            this.ActionType = ActionTypes.KillProcess;
-        }
-        public override void Execute()
-        {
-            
         }
     }
 }
