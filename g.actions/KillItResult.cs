@@ -6,9 +6,9 @@ namespace g
 {
     public class KillItResult : ParseArgsResult
     {
-        public KillItResult(string[] args)
+        public KillItResult()
         {
-            this.Arguments = args;
+            
             this.ActionType = ActionTypes.KillProcess;
         }
         private bool ArgsContainsAnyVariationFor(string switchName, string delimiters = "-/")

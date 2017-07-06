@@ -7,9 +7,8 @@ namespace g
 {
     public class RunItResult : ParseArgsResult
     {
-        public RunItResult(string[] args)
+        public RunItResult()
         {
-            Arguments = args;
             ActionType = ActionTypes.RunCommand;
         }
         public override void Execute()

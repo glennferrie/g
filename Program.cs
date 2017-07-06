@@ -7,8 +7,11 @@ namespace g
 {
     class Program
     {
+        Dictionary<string, ParseArgsResult> results = new Dictionary<string, ParseArgsResult>();
         static void Main(string[] args)
         {
+
+
             var command = ParseArgs(args);
             switch (command.ActionType)
             {
@@ -24,26 +27,24 @@ namespace g
                     Console.WriteLine("Execute: " + command.GetType().Name);
                     command.Execute();
                     return;
-                
             }
         }
 
         static ParseArgsResult ParseArgs(string[] args)
         {
-            
             if (args != null && args.Length > 0)
             {
                 var flatArgs = string.Join(" ", args);
-                Console.WriteLine("parsing args: " + flatArgs);
+                //Console.WriteLine("parsing args: " + flatArgs);
                 var lower0 = args[0].ToLower();
                 switch (lower0)
                 {
-                    case "run":
-                    case "r":
-                        return new RunItResult(args);
-                    case "k":
-                    case "kill":
-                        return new KillItResult(args);
+                    //case "run":
+                    //case "r":
+                    //    return new RunItResult(args);
+                    //case "k":
+                    //case "kill":
+                    //    return new KillItResult(args);
 
                 }
             }
