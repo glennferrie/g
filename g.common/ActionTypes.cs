@@ -4,6 +4,7 @@
     {
         Quit = -1,
         RunCommand = 0,
-        KillProcess = 1
+        KillProcess = 1,
+        Custom = 999
     }
 }

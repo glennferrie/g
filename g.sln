@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "g.common", "g.common\g.comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "g.actions", "g.actions\g.actions.csproj", "{27CDF301-11AC-4CFC-9171-C29BCF949B01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BAB89FC-7AD7-4E1B-AB2A-54DC5FA32154}"
+	ProjectSection(SolutionItems) = preProject
+		README-CommandGlossary.txt = README-CommandGlossary.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

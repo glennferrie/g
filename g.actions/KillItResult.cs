@@ -8,7 +8,7 @@ namespace g
     {
         public KillItResult()
         {
-            
+            SwitchWord = "k";
             this.ActionType = ActionTypes.KillProcess;
         }
         private bool ArgsContainsAnyVariationFor(string switchName, string delimiters = "-/")
@@ -59,7 +59,7 @@ namespace g
             {
                 Console.WriteLine("Error in KillItResult: {0}", ex);
                 Console.WriteLine("Press <Enter> to continue...");
-                var holdPlease = Console.ReadLine();
+                Console.ReadLine();
             }
         }
     }

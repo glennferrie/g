@@ -9,37 +9,35 @@ namespace g
     {
         public RunItResult()
         {
+            SwitchWord = "run";
             ActionType = ActionTypes.RunCommand;
         }
         public override void Execute()
         {
-            foreach(var path in Arguments.Skip(1)) // skip the first arg
-            {
-                if (File.Exists(path))
-                {
-                    Process.Start(new ProcessStartInfo(path));
-                }
-                else
-                {
+            var args = Arguments.Skip(1).ToArray();
 
-                    switch(path)
-                    {
-                        case "-w":
-                            Console.WriteLine("Press <Enter> to continue...");
-                            var waitFor = Console.ReadLine();
-                            break;
-                        default:
-                            try
-                            {
-                                Process.Start(new ProcessStartInfo(path));
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex);
-                            }
-                            break;
-                    }
-                }
+            // handle simple scenarios
+            switch(args.Length)
+            {
+                case 0:
+                    return;
+            }
+
+            // handle wait argument
+            var wait = false;
+            if (args.Contains("-w") || args.Contains("-wait"))
+            {
+                args = args.TakeWhile(a => a != "-w").ToArray(); // remove the item.
+                wait = true;
+            }
+
+
+
+            if (wait)
+            {
+                Console.WriteLine("Waiting.... ");
+                Console.WriteLine("Press Enter to continue.");
+                Console.ReadLine();
             }
         }
     }
